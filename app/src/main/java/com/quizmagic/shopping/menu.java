@@ -9,6 +9,9 @@ import java.text.NumberFormat;
 
 public class menu extends AppCompatActivity {
 
+    private int mQuantity;
+    private int mPrice = 5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,36 +19,40 @@ public class menu extends AppCompatActivity {
     }
 
     public void increment(View view) {
-        int quanitty = getQuanitty();
+        displayQuantity();
+        ++mQuantity;
+        resetTotolPrice();
 
-        display(++quanitty);
     }
+
     public void decrement(View view) {
-        int quanitty = getQuanitty();
-        if(quanitty>0) {
-            display(--quanitty);
+        if (mQuantity > 0) {
+            --mQuantity;
+            displayQuantity();
+            resetTotolPrice();
         }
     }
 
-    private int getQuanitty() {
-        TextView quantityTextView = (TextView)findViewById(R.id.quavtity_text_view);
-        String quantityString = quantityTextView.getText().toString();
-        return Integer.parseInt(quantityString);
-    }
-
-    public void submitOrder(View view) {
-        display(1);
-    }
-
-    private void display(int number) {
-        TextView quantityTextView = (TextView)findViewById(R.id.quavtity_text_view);
-        quantityTextView.setText(String.valueOf(number));
-
+    private void resetTotolPrice(){
         TextView priceTextView = (TextView)findViewById(R.id.price_text_view);
-        int price = 5;
-        int total = price * number;
+        priceTextView.setText("");
+    }
+    public void submitOrder(View view) {
+        displayTotalPrice();
+    }
+
+    private void displayTotalPrice() {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        int total = mPrice * mQuantity;
         String myString = NumberFormat.getCurrencyInstance().format(total);
         priceTextView.setText(myString);
+        String message = myString + (mQuantity==0?"\nFree":"\nThank you!");
+        priceTextView.setText(message);
+    }
+
+    private void displayQuantity() {
+        TextView quantityTextView = (TextView) findViewById(R.id.quavtity_text_view);
+        quantityTextView.setText(String.valueOf(mQuantity));
     }
 
 

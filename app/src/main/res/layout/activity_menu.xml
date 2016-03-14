@@ -21,35 +21,44 @@
             android:text="您要訂購些什麼？"
             android:textSize="24dp" />
 
-        <Button
-            android:layout_width="100dp"
-            android:onClick="increment"
-            android:layout_height="50dp"
-            android:text="+"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            android:layout_marginTop="20dp"
-            android:background="#4287f7"
-            android:textColor="#ffffff"
-            android:textSize="24dp" />
+            <Button
+                android:layout_width="100dp"
+                android:onClick="increment"
+                android:layout_height="50dp"
+                android:text="+"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:id="@+id/quavtity_text_view"
-            android:layout_marginTop="20dp"
-            android:textSize="24dp" />
+                android:layout_marginTop="20dp"
+                android:background="#4287f7"
+                android:textColor="#ffffff"
+                android:textSize="24dp" />
 
-        <Button
-            android:layout_width="100dp"
-            android:onClick="decrement"
-            android:layout_height="50dp"
-            android:text="-"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/quavtity_text_view"
+                android:layout_marginTop="20dp"
+                android:textSize="24dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="#9322ea" />
 
-            android:layout_marginTop="10dp"
-            android:background="#4287f7"
-            android:textColor="#ffffff"
-            android:textSize="24dp" />
+            <Button
+                android:layout_width="100dp"
+                android:onClick="decrement"
+                android:layout_height="50dp"
+                android:text="-"
+
+                android:layout_marginTop="20dp"
+                android:background="#4287f7"
+                android:textColor="#ffffff"
+                android:textSize="24dp"
+                android:layout_marginLeft="20dp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -75,7 +84,7 @@
             android:layout_height="wrap_content"
             android:text="NT$0"
             android:id="@+id/price_text_view"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:textSize="24dp" />
 
     </LinearLayout>
