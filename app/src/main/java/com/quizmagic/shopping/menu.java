@@ -3,6 +3,9 @@ package com.quizmagic.shopping;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -11,9 +14,15 @@ public class menu extends AppCompatActivity {
 
     private int mQuantity;
     private int mPrice = 5;
+    private String Milktea = "奶茶";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
     }
@@ -56,4 +65,10 @@ public class menu extends AppCompatActivity {
     }
 
 
+    public void mk(View view) {
+        final CheckBox mk = (CheckBox)findViewById(R.id.checkBox);
+        if(mk.isChecked()){
+            resetTotolPrice();
+        }
+    }
 }
