@@ -17,7 +17,7 @@ public class menu extends AppCompatActivity {
     private String mName = "小野";
     private StringBuilder mPriceMessage = new StringBuilder("NT$"+mPrice);
     private StringBuilder mQuantityMessage = new StringBuilder(mQuantity);
-
+    CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,8 @@ public class menu extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        checkBox = (CheckBox)findViewById(R.id.toppings_checkbox);
     }
 
     private void displayTotalPrice() {
@@ -42,14 +44,18 @@ public class menu extends AppCompatActivity {
 
 
     public void clickToppings(View view) {
-        resetPriceMessageString();
-        displayPriceMessage();
+        if(checkBox.isChecked() == true){
+            resetPriceMessageString();
+            displayPriceMessage();
+        }else{
+            displayTotalPrice();
+        }
     }
 
     private void resetPriceMessageString(){
         clearPriceMessageString();
         mPriceMessage.append("奶茶")
-                .append("NT$").append(mPrice);
+                .append("NT$ ").append(mPrice);
     }
 
     private void displayPriceMessage(){
@@ -111,7 +117,7 @@ public class menu extends AppCompatActivity {
     }
 
     private void concatPriceMessageString(){
-        CheckBox checkBox = (CheckBox)findViewById(R.id.toppings_checkbox);
+
         mPriceMessage.append("Name: ")
                 .append(mName)
                 .append("\n")
