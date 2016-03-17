@@ -22,11 +22,11 @@
             android:textSize="24dp" />
 
         <CheckBox
-            android:onClick="mk"
+            android:onClick="clickToppings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="奶茶"
-            android:id="@+id/checkBox"
+            android:id="@+id/toppings_checkbox"
             android:textSize="24dp"
             android:textColor="#a97000"
             android:layout_marginTop="10dp" />
@@ -40,7 +40,7 @@
             <Button
                 android:layout_width="150dp"
                 android:onClick="increment"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:text="+"
 
                 android:background="#4287f7"
@@ -59,7 +59,7 @@
             <Button
                 android:layout_width="150dp"
                 android:onClick="decrement"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:text="-"
 
                 android:background="#4287f7"
@@ -77,9 +77,9 @@
             android:layout_marginTop="10dp" />
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:onClick="submitOrder"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:text="總共"
             android:id="@+id/button3"
             android:textSize="20dp"
