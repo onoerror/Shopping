@@ -40,16 +40,30 @@ public class menu extends AppCompatActivity {
         priceTextView.setText(message);
     }
 
-
+    public void mediator(View view){
+//        if(view.getId()==R.id.toppings_checkbox){
+//            if(checkBox.isChecked() == true){
+//                resetPriceMessageString();
+//                displayPriceMessage();
+//            }else{
+//                displayTotalPrice();
+//            }
+//        }
+        switch (view.getId()){
+            case R.id.toppings_checkbox:
+                if(checkBox.isChecked() == true){
+                resetPriceMessageString();
+                displayPriceMessage();
+            }else{
+                displayTotalPrice();
+            }
+                break;
+        }
+    }
 
 
     public void clickToppings(View view) {
-        if(checkBox.isChecked() == true){
-            resetPriceMessageString();
-            displayPriceMessage();
-        }else{
-            displayTotalPrice();
-        }
+
     }
 
     private void resetPriceMessageString(){
